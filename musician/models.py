@@ -1,9 +1,11 @@
 from django.core.exceptions import ValidationError
 from django.db import models
 
+
 def validate_age(value):
     if value < 14:
         raise ValidationError("Musicians must be at least 14 years old")
+
 
 class Musician(models.Model):
     first_name = models.CharField(max_length=63)
